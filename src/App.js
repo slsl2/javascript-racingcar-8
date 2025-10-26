@@ -82,6 +82,12 @@ function printRound(roundResult) {
   Console.print("");
 }
 
+function printWinners(cars) {
+  const maxPos = Math.max(...cars.map((c) => c.pos));
+  const winners = cars.filter((c) => c.pos === maxPos).map((c) => c.name);
+  Console.print(`최종 우승자 : ${winners.join(", ")}`);
+}
+
 class App {
   async run() {
     try {
