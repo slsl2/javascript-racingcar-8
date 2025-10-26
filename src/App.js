@@ -1,5 +1,10 @@
 import { Console, Random } from "@woowacourse/mission-utils";
 
+// 에러 발생시키는 함수
+function fail(msg) {
+  throw new Error(`[ERROR] ${msg}`);
+}
+
 // 이름 입력 받는 함수
 async function inputCarNames() {
   const NAMES_INPUT = await Console.readLineAsync(
@@ -17,7 +22,18 @@ async function inputTotalRound() {
 }
 
 class App {
-  async run() {}
+  async run() {
+    try {
+      inputCarNames();
+      inputTotalRound();
+    } catch (error) {
+      Console.print(
+        error.message ||
+          "[ERROR] 알 수 없는 오류가 발생했습니다. 다시 시도해 주세요."
+      );
+      throw error;
+    }
+  }
 }
 
 export default App;
