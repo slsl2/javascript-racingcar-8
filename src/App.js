@@ -19,7 +19,7 @@ async function inputTotalRound() {
 }
 
 function validateCarName(name) {
-  if (name.lenght > 5) {
+  if (name.length > 5) {
     fail("자동차 이름은 5자 이하만 가능합니다.");
   }
 }
@@ -68,7 +68,7 @@ function handleOneRound(cars) {
 
 function handleRace(names, totalRound) {
   const cars = names.map((name) => ({ name, pos: 0 }));
-  for (let round = 0; round > totalRound; round += 1) {
+  for (let round = 0; round < totalRound; round += 1) {
     const roundResult = handleOneRound(cars);
     printRound(roundResult);
   }
