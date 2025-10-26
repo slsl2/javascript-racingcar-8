@@ -28,6 +28,15 @@ function validateCarName(name) {
   }
 }
 
+// 무작위 값 구해서 4 이상일 경우 전진 (true)
+function getRandomNumber() {
+  const RANDOM_NUMBER = Random.pickNumberInRange(0, 9);
+  if (RANDOM_NUMBER >= 4) {
+    return true;
+  }
+  return false;
+}
+
 class App {
   async run() {
     try {
