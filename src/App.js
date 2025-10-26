@@ -91,8 +91,12 @@ function printWinners(cars) {
 class App {
   async run() {
     try {
-      inputCarNames();
-      inputTotalRound();
+      const namesInput = await inputCarNames();
+      const totalRoundInput = await inputTotalRound();
+      const names = splitCarNames(namesInput);
+      const totalRound = validateTotalRound(totalRoundInput);
+      Console.print("\n실행 결과");
+      handleRace(names, totalRound);
     } catch (error) {
       Console.print(
         error.message ||
