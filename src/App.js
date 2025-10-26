@@ -1,4 +1,4 @@
-import { Console, Random } from "@woowacourse/mission-utils";
+import { Console, Random } from '@woowacourse/mission-utils';
 
 function fail(msg) {
   throw new Error(`[ERROR] ${msg}`);
@@ -6,43 +6,41 @@ function fail(msg) {
 
 async function inputCarNames() {
   const namesInput = await Console.readLineAsync(
-    "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n"
+    '경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n',
   );
   return namesInput;
 }
 
 async function inputTotalRound() {
-  const totalRoundInput = await Console.readLineAsync(
-    "시도할 횟수는 몇 회인가요?\n"
-  );
+  const totalRoundInput = await Console.readLineAsync('시도할 횟수는 몇 회인가요?\n');
   return totalRoundInput;
 }
 
 function validateCarName(name) {
   if (name.length > 5) {
-    fail("자동차 이름은 5자 이하만 가능합니다.");
+    fail('자동차 이름은 5자 이하만 가능합니다.');
   }
 }
 
 function splitCarNames(namesInput) {
   const names = namesInput
-    .split(",")
+    .split(',')
     .map((name) => name.trim())
-    .filter((name) => name !== "");
+    .filter((name) => name !== '');
   names.forEach(validateCarName);
   return names;
 }
 
 function validateTotalRound(totalRoundInput) {
-  if (totalRoundInput === "") {
-    fail("이동 횟수가 입력되지 않았습니다.");
+  if (totalRoundInput === '') {
+    fail('이동 횟수가 입력되지 않았습니다.');
   }
   const totalRound = Number(totalRoundInput);
   if (Number.isNaN(totalRound)) {
-    fail("이동 횟수는 숫자만 입력 가능합니다.");
+    fail('이동 횟수는 숫자만 입력 가능합니다.');
   }
   if (!Number.isInteger(totalRound) || totalRound <= 0) {
-    fail("이동 횟수는 양수인 정수만 입력 가능합니다.");
+    fail('이동 횟수는 양수인 정수만 입력 가능합니다.');
   }
   return totalRound;
 }
@@ -77,18 +75,14 @@ function handleRace(names, totalRound) {
 }
 
 function printRound(roundResult) {
-  roundResult.forEach(({ name, pos }) =>
-    Console.print(`${name} : ${"-".repeat(pos)}`)
-  );
-  Console.print("");
+  roundResult.forEach(({ name, pos }) => Console.print(`${name} : ${'-'.repeat(pos)}`));
+  Console.print('');
 }
 
 function printWinners(cars) {
   const maxPos = Math.max(...cars.map(({ pos }) => pos));
-  const winners = cars
-    .filter(({ pos }) => pos === maxPos)
-    .map(({ name }) => name);
-  Console.print(`최종 우승자 : ${winners.join(", ")}`);
+  const winners = cars.filter(({ pos }) => pos === maxPos).map(({ name }) => name);
+  Console.print(`최종 우승자 : ${winners.join(', ')}`);
 }
 
 class App {
@@ -98,13 +92,10 @@ class App {
       const totalRoundInput = await inputTotalRound();
       const names = splitCarNames(namesInput);
       const totalRound = validateTotalRound(totalRoundInput);
-      Console.print("\n실행 결과");
+      Console.print('\n실행 결과');
       handleRace(names, totalRound);
     } catch (error) {
-      Console.print(
-        error.message ||
-          "[ERROR] 알 수 없는 오류가 발생했습니다. 다시 시도해 주세요."
-      );
+      Console.print(error.message || '[ERROR] 알 수 없는 오류가 발생했습니다. 다시 시도해 주세요.');
       throw error;
     }
   }
