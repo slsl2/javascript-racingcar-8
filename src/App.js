@@ -24,6 +24,15 @@ function validateCarName(name) {
   }
 }
 
+function splitCarNames(namesInput) {
+  const names = namesInput
+    .split(",")
+    .map((name) => name.trim())
+    .filter((name) => name !== "");
+  names.forEach(validateCarName);
+  return names;
+}
+
 function validateTotalRound(totalRoundInput) {
   if (totalRoundInput === "") {
     fail("이동 횟수가 입력되지 않았습니다.");
@@ -38,13 +47,32 @@ function validateTotalRound(totalRoundInput) {
   return totalRound;
 }
 
-function splitCarNames(namesInput) {
-  const names = namesInput
-    .split(",")
-    .map((name) => name.trim())
-    .filter((name) => name !== "");
-  names.forEach(validateCarName);
-  return names;
+function canMove() {
+  const randomNumber = Random.pickNumberInRange(0, 9);
+  if (randomNumber >= 4) {
+    return true;
+  }
+  return false;
+}
+
+function handleOneRound(cars) {
+  let roundResult = [];
+  for (let i = 0; i < cars.length; i += 1) {
+    if (canMove()) {
+      cars[i].pos += 1;
+    }
+    roundResult.push({ name: cars[i].name, pos: cars[i].pos });
+  }
+  return roundResult;
+}
+
+function handleRace(names, totalRound) {
+  const cars = names.map((name) => ({ name, pos: 0 }));
+  for (let round = 0; round > totalRound; round += 1) {
+    const roundResult = handleOneRound(cars);
+    printRound(roundResult);
+  }
+  printWinners(cars);
 }
 
 class App {
