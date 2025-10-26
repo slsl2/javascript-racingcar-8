@@ -75,6 +75,13 @@ function handleRace(names, totalRound) {
   printWinners(cars);
 }
 
+function printRound(roundResult) {
+  roundResult.forEach(({ name, pos }) =>
+    Console.print(`${name} : ${"-".repeat(pos)}`)
+  );
+  Console.print("");
+}
+
 class App {
   async run() {
     try {
