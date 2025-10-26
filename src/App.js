@@ -61,7 +61,8 @@ function handleOneRound(cars) {
     if (canMove()) {
       cars[i].pos += 1;
     }
-    roundResult.push({ name: cars[i].name, pos: cars[i].pos });
+    const { name, pos } = cars[i];
+    roundResult.push({ name, pos });
   }
   return roundResult;
 }
@@ -83,8 +84,10 @@ function printRound(roundResult) {
 }
 
 function printWinners(cars) {
-  const maxPos = Math.max(...cars.map((c) => c.pos));
-  const winners = cars.filter((c) => c.pos === maxPos).map((c) => c.name);
+  const maxPos = Math.max(...cars.map(({ pos }) => pos));
+  const winners = cars
+    .filter(({ pos }) => pos === maxPos)
+    .map(({ name }) => name);
   Console.print(`최종 우승자 : ${winners.join(", ")}`);
 }
 
