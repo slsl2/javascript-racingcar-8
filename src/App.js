@@ -21,6 +21,13 @@ async function inputTotalRound() {
   return TOTAL_ROUND_INPUT;
 }
 
+// 이름 유효성 검사
+function validateCarName(name) {
+  if (name < 5) {
+    fail("자동차 이름은 5자 이하만 가능합니다.");
+  }
+}
+
 class App {
   async run() {
     try {
