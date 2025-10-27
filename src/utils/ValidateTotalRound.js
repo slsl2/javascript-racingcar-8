@@ -1,4 +1,4 @@
-import { fail } from './Fail';
+import { fail } from './Fail.js';
 
 export function validateTotalRound(totalRoundInput) {
   if (totalRoundInput === '') {

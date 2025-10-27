@@ -1,4 +1,4 @@
-import { fail } from './Fail';
+import { fail } from './Fail.js';
 
 export function validateCarName(name) {
   if (name.length > 5) {

@@ -1,6 +1,6 @@
 import { describe, test, expect, jest } from '@jest/globals';
 import { Random } from '@woowacourse/mission-utils';
-import { canMove } from '../src/race/CanMove';
+import { canMove } from '../src/race/CanMove.js';
 
 describe('canMove', () => {
   test('랜덤값이 4 이상이면 true 반환 테스트', () => {

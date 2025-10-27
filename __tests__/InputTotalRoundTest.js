@@ -1,6 +1,6 @@
 import { describe, test, expect, jest } from '@jest/globals';
 import { Console } from '@woowacourse/mission-utils';
-import { inputTotalRound } from '../src/input/InputTotalRound';
+import { inputTotalRound } from '../src/input/InputTotalRound.js';
 
 describe('inputTotalRound', () => {
   test('Console.readLineAsync가 호출되는지 테스트', async () => {

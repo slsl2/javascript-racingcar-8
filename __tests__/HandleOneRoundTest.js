@@ -1,6 +1,6 @@
 import { describe, test, expect, jest } from '@jest/globals';
-import { handleOneRound } from '../src/race/HandleOneRound';
-import { canMove } from '../src/race/CanMove';
+import { handleOneRound } from '../src/race/HandleOneRound.js';
+import { canMove } from '../src/race/CanMove.js';
 
 jest.mock('../src/race/CanMove', () => ({
   canMove: jest.fn(),

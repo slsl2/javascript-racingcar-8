@@ -1,6 +1,6 @@
 import { describe, test, expect, jest } from '@jest/globals';
 import { Console } from '@woowacourse/mission-utils';
-import { printRound } from '../src/race/PrintRound';
+import { printRound } from '../src/race/PrintRound.js';
 
 jest.mock('@woowacourse/mission-utils', () => ({
   Console: { print: jest.fn() },

@@ -1,6 +1,6 @@
-import { handleOneRound } from './HandleOneRound';
-import { printRound } from './PrintRound';
-import { printWinners } from './PrintWinners';
+import { handleOneRound } from './HandleOneRound.js';
+import { printRound } from './PrintRound.js';
+import { printWinners } from './PrintWinners.js';
 
 export function handleRace(names, totalRound) {
   const cars = names.map((name) => ({ name, pos: 0 }));

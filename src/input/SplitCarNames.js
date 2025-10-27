@@ -1,4 +1,4 @@
-import { validateCarName } from '../utils/ValidateCarName';
+import { validateCarName } from '../utils/ValidateCarName.js';
 
 export function splitCarNames(namesInput) {
   const names = namesInput

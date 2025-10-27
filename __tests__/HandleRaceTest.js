@@ -1,8 +1,8 @@
 import { describe, test, expect, jest } from '@jest/globals';
-import { handleRace } from '../src/race/HandleRace';
-import { handleOneRound } from '../src/race/HandleOneRound';
-import { printRound } from '../src/race/PrintRound';
-import { printWinners } from '../src/race/PrintWinners';
+import { handleRace } from '../src/race/HandleRace.js';
+import { handleOneRound } from '../src/race/HandleOneRound.js';
+import { printRound } from '../src/race/PrintRound.js';
+import { printWinners } from '../src/race/PrintWinners.js';
 
 jest.mock('../src/race/HandleOneRound', () => ({
   handleOneRound: jest.fn().mockReturnValue([{ name: 'tobi', pos: 1 }]),

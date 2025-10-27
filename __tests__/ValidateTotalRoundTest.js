@@ -1,6 +1,6 @@
 import { describe, test, expect, jest, beforeEach } from '@jest/globals';
-import { validateTotalRound } from '../src/utils/ValidateTotalRound';
-import { fail } from '../src/utils/Fail';
+import { validateTotalRound } from '../src/utils/ValidateTotalRound.js';
+import { fail } from '../src/utils/Fail.js';
 
 jest.mock('../src/utils/Fail', () => ({
   fail: jest.fn(),

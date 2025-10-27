@@ -1,4 +1,4 @@
-import { canMove } from './CanMove';
+import { canMove } from './CanMove.js';
 
 export function handleOneRound(cars) {
   let roundResult = [];

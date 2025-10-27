@@ -1,9 +1,9 @@
 import { Console } from '@woowacourse/mission-utils';
-import { inputCarNames } from './input/InputCarNames';
-import { inputTotalRound } from './input/InputTotalRound';
-import { splitCarNames } from './input/SplitCarNames';
-import { validateTotalRound } from './utils/ValidateTotalRound';
-import { handleRace } from './race/HandleRace';
+import { inputCarNames } from './input/InputCarNames.js';
+import { inputTotalRound } from './input/InputTotalRound.js';
+import { splitCarNames } from './input/SplitCarNames.js';
+import { validateTotalRound } from './utils/ValidateTotalRound.js';
+import { handleRace } from './race/HandleRace.js';
 
 class App {
   async run() {
