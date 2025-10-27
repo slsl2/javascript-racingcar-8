@@ -2,7 +2,37 @@
 
 ## 애플리케이션 개요
 
-## 코드 구조
+- 사용자가 입력한 자동차 이름과 시도 횟수를 기반으로 경주를 진행하는 콘솔 게임입니다.
+
+- 각 자동차는 0부터 9 사이의 무작위 숫자를 통해 이동 여부가 결정됩니다. (4 이상일 시 이동)
+
+- 한 라운드가 끝날 때마다 자동차의 현재 위치를 - 로 출력합니다.
+
+- 모든 라운드가 종료되면, 가장 많이 이동한 자동차(한 개 이상)를 최종 우승자로 출력합니다.
+
+- Node.js 환경에서 실행되며, Jest로 기능별 단위 테스트를 수행합니다.
+
+## 파일 구조
+
+`__tests__`//
+├── 기능별 단위 테스트 파일들
+src/
+├── index.js
+├── App.js
+├── input/
+│ ├── InputCarNames.js
+│ ├── InputTotalRound.js
+│ └── SplitCarNames.js
+├── race/
+│ ├── CanMove.js
+│ ├── HandleOneRound.js
+│ ├── HandleRace.js
+│ ├── PrintRound.js
+│ └── PrintWinners.js
+├── utils/
+│ ├── Fail.js
+│ ├── ValidateCarName.js
+│ └── ValidateTotalRound.js
 
 ## 과제 체크 리스트
 
@@ -46,4 +76,4 @@
 
 - [x] 함수(또는 메서드)가 한 가지 일만 하도록 최대한 작게 만들기
 
-- [] Jest를 이용하여 정리한 기능 목록이 정상적으로 작동하는지 테스트 코드로 확인
+- [x] Jest를 이용하여 정리한 기능 목록이 정상적으로 작동하는지 테스트 코드로 확인
