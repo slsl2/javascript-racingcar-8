@@ -2,7 +2,7 @@ import { Console } from '@woowacourse/mission-utils';
 import { inputCarNames } from './input/InputCarNames';
 import { inputTotalRound } from './input/InputTotalRound';
 import { splitCarNames } from './input/SplitCarNames';
-import { validateTotalRound } from './utils/ValidationCheck';
+import { validateTotalRound } from './utils/ValidateTotalRound';
 import { handleRace } from './race/HandleRace';
 
 class App {
